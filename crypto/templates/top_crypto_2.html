@@ -2,7 +2,7 @@
 {% block content %}
 <div class="jumbotron">
   <h1 class="display-4" style="text-align:center">Toplist by 24H Volume Full Data</h1>
-  <p class="lead" style="text-align:center">This grabs the top 10 coins by their total volume across all markets in the last 24 hours.</p>
+  <p class="lead" style="text-align:center">This grabs the top 20 coins by their total volume across all markets in the last 24 hours.</p>
   <br><br>
 </div>
 <form class="d-flex" method="POST" action="{% url 'prices' %}">
@@ -37,7 +37,6 @@
     </table>
 </form>
 <div class="container text-center">
-  <a href='top_crypto_2' type="button" class="btn btn-link" >View 10 more..</a> | <a href='top_crypto_3' type="button" class="btn btn-link" >View all...</a>
+  <a href='top_crypto' type="button" class="btn btn-link" >View Less...</a> | <a href='top_crypto_3' type="button" class="btn btn-link" >View more..</a> | <a href='top_crypto_3' type="button" class="btn btn-link" >View all...</a>
 </div>
-
 {% endblock %}

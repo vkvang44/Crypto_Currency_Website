@@ -3,6 +3,7 @@ from django.shortcuts import render
 # free api key
 api_key = 'fcbcd6c636020c3e0654c3853fb39dd85c3c83c1194bf757ee55d76e882cf0a4'
 
+
 # Create your views here.
 def home(request):
     import requests
@@ -46,4 +47,26 @@ def top_crypto(request):
     coin_request = requests.get(f'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=10&tsym=USD&api_key={api_key}')
     top_coin = json.loads(coin_request.content)
 
-    return render(request, 'top_crypto.html', {'top_coin': top_coin, 'range': range(10)})
+    return render(request, 'top_crypto.html', {'top_coin': top_coin})
+
+
+def top_crypto_2(request):
+    import requests
+    import json
+
+    # grab top 20
+    coin_request = requests.get(f'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=20&tsym=USD&api_key={api_key}')
+    top_coin = json.loads(coin_request.content)
+
+    return render(request, 'top_crypto_2.html', {'top_coin': top_coin})
+
+
+def top_crypto_3(request):
+    import requests
+    import json
+
+    # grab the top 30
+    coin_request = requests.get(f'https://min-api.cryptocompare.com/data/top/totalvolfull?limit=30&tsym=USD&api_key={api_key}')
+    top_coin = json.loads(coin_request.content)
+
+    return render(request, 'top_crypto_3.html', {'top_coin': top_coin})

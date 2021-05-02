@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
+
 {% block content %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'card.css' %}">
+
 <div class="jumbotron">
   <h1 class="display-4" style="text-align:center">Welcome to my Crypto Currency Website!</h1>
   <p class="lead" style="text-align:center">This is a simple project website that displays information regarding crypto</p>
   <br><br>
 </div>
+
 <div class="container">
     <div class="row">
         {% for x in news.Data%}
@@ -25,27 +31,6 @@
 {% endblock %}
 
 <!-- This is kept here for future reference in case i need to understand what i did
-
-                <div class="card h-100">
-                    <img src="{{x.imageurl}}" alt="{{x.source}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{x.title}}</h5>
-                        <p class="card-text">{{x.body|truncatechars:150}}</p>
-                    </div>
-                    <a href="{{x.url}}" type="button" class="btn btn-link">Read more...</a>
-                </div>
-
-            <div class="col-sm-4 py-2">
-                <div class="card h-100" style="width: 18rem;">
-                  <img src="{{ x.imageurl }}" class="card-img-top" alt="x.source">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ x.title }}</h5>
-                    <p class="card-text " >{{ x.body | truncatechars:100 }}</p>
-                  </div>
-                  <a href="{{ x.url}}" type="button" class="btn btn-link">Read more...</a>
-                </div>
-                </br>
-            </div>
 
 <section id="gallery">
   <div class="container">

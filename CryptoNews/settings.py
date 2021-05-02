@@ -109,6 +109,7 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 USE_L10N = True
 
@@ -124,3 +125,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_DIRS = [
+    "/CryptoNews/crypto/static",
+]

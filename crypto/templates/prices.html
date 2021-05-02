@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if notfound %}
+        <p style="text-align:center">{{ notfound }}</p>
+    {% else %}
+        {% if crypto.Response %}
+<p style="text-align:center">The symbol <b>{{ quote }}</b> does not exist.</p>
+            <p style="text-align:center">If you entered in the Crypto name then please enter the symbol associated with the Cryptocurrency.</p>
+        {% endif %}
+        {% for key, value in crypto.DISPLAY.items %}
+        <div class="jumbotron">
+            <h1 class="display-4" style="text-align:center">{{key}}</h1>
+            <p style="text-align:center">
+            <strong>Market: </strong>{{ value.USD.MARKET }}<br/>
+            <strong>Price: </strong>{{ value.USD.PRICE }}<br/>
+            <strong>Last Update: </strong>{{ value.USD.LASTUPDATE }}<br/>
+            <strong>Open Day: </strong>{{ value.USD.OPENDAY }}<br/>
+            <strong>High Day: </strong>{{ value.USD.HIGHDAY }}<br/>
+            <strong>Low Day: </strong>{{ value.USD.LOWDAY }}<br/>
+            <strong>Market Cap: </strong>{{ value.USD.MKTCAP }}<br/>
+            </p>
+            <br><br>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

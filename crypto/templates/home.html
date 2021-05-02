@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4" style="text-align:center">Welcome to my Crypto Currency Website!</h1>
+  <p class="lead" style="text-align:center">This is a simple project website that displays information regarding crypto</p>
+  <br><br>
+</div>
+<div class="container">
+    <div class="row">
+        {% for x in news.Data%}
+            <div class="col-sm-4 py-2">
+                <div class="card h-100" style="width: 18rem;">
+                  <img src="{{ x.imageurl }}" class="card-img-top" alt="x.source">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ x.title }}</h5>
+                    <p class="card-text " >{{ x.body | truncatechars:100 }}</p>
+                  </div>
+                  <a href="{{ x.url}}" type="button" class="btn btn-link">Read more...</a>
+                </div>
+                </br>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+<!-- This is kept here for future reference in case i need to understand what i did
+<form class="d-flex" method="POST" action="{% url 'prices' %}">
+    {% csrf_token %}
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">MARKET</th>
+          <th scope="col">PRICE</th>
+          <th scope="col">LASTUPDATE</th>
+          <th scope="col">OPENDAY</th>
+          <th scope="col">HIGHDAY</th>
+          <th scope="col">LOWDAY</th>
+          <th scope="col">MKTCAP</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for key, value in price.DISPLAY.items %}
+        <tr>
+          <td><button type="submit" name="quote" value={{key}} class="btn btn-link">{{key}}</button></td>
+          <td>{{ value.USD.MARKET }}</td>
+          <td>{{ value.USD.PRICE }}</td>
+          <td>{{ value.USD.LASTUPDATE }}</td>
+          <td>{{ value.USD.OPENDAY }}</td>
+          <td>{{ value.USD.HIGHDAY }}</td>
+          <td>{{ value.USD.LOWDAY }}</td>
+          <td>{{ value.USD.MKTCAP }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</form>
+-->

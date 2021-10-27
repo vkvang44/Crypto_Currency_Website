@@ -6,3 +6,5 @@ Supported Functionalities:
  1. Displays news feed relating to Crypto
  2. Displays top 30 crypto coins by their total volume across all markets in the last 24 hours
  3. Search functionality for an existing Crypto to see latest data related to the coin
+
+<img alt="Logo" align="right" src="https://create-react-app.dev/img/logo.svg" width="20%" />
